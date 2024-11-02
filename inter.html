@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Workout Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .exercise-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        .exercise {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .exercise:hover {
+            transform: translateY(-5px);
+        }
+
+        .exercise img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .exercise h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .exercise p {
+            display: none;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin-top: 15px;
+            display: none;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Intermediate Workout Plan</h1>
+
+    <ul class="exercise-list">
+
+        <!-- Exercise 1 -->
+        <li class="exercise">
+            <img src="images/Inter Barbell Deadlifts.jpg" alt="Barbell Deadlifts">
+            <h2 onclick="toggleDescription(0)">Barbell Deadlifts</h2>
+            <p>Description: Deadlifts are a total-body exercise targeting the back, legs, and core. Ideal for intermediate strength building.</p>
+            <button onclick="toggleVideo(0)">Watch Video</button>
+            <iframe id="video-0" src="https://www.youtube.com/embed/op9kVnSso6Q" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 2 -->
+        <li class="exercise">
+            <img src="images/Inter Barbell Bench press.jpg" alt="Barbell Bench Press">
+            <h2 onclick="toggleDescription(1)">Barbell Bench Press</h2>
+            <p>Description: The bench press focuses on building chest, shoulder, and tricep strength.</p>
+            <button onclick="toggleVideo(1)">Watch Video</button>
+            <iframe id="video-1" src="https://www.youtube.com/embed/gRVjAtPip0Y" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 3 -->
+        <li class="exercise">
+            <img src="images/Inter Bent Over rows.jpg" alt="Bent Over Rows">
+            <h2 onclick="toggleDescription(2)">Bent Over Rows</h2>
+            <p>Description: This exercise targets the back muscles and biceps, improving upper-body strength and posture.</p>
+            <button onclick="toggleVideo(2)">Watch Video</button>
+            <iframe id="video-2" src="https://www.youtube.com/embed/kBWAon7ItDw" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 4 -->
+        <li class="exercise">
+            <img src="images/Inter Bulgarian Split Squats.jpg" alt="Bulgarian Split Squats">
+            <h2 onclick="toggleDescription(3)">Bulgarian Split Squats</h2>
+            <p>Description: Bulgarian split squats are perfect for developing unilateral leg strength and balance.</p>
+            <button onclick="toggleVideo(3)">Watch Video</button>
+            <iframe id="video-3" src="https://www.youtube.com/embed/2C-uNgKwPLE" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 5 -->
+        <li class="exercise">
+            <img src="images/Inter pulls ups.jpg" alt="Pull-Ups">
+            <h2 onclick="toggleDescription(4)">Pull-Ups</h2>
+            <p>Description: Pull-ups are excellent for building upper back and biceps strength, while also engaging the core.</p>
+            <button onclick="toggleVideo(4)">Watch Video</button>
+            <iframe id="video-4" src="https://www.youtube.com/embed/eGo4IYlbE5g" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 6 -->
+        <li class="exercise">
+            <img src="images/Inter Dips.jpg" alt="Dips">
+            <h2 onclick="toggleDescription(5)">Dips</h2>
+            <p>Description: Dips are a great bodyweight exercise for developing chest and tricep strength.</p>
+            <button onclick="toggleVideo(5)">Watch Video</button>
+            <iframe id="video-5" src="https://www.youtube.com/embed/2z8JmcrW-As" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 7 -->
+        <li class="exercise">
+            <img src="images/Inter Barbell Deadlifts.jpg" alt="Romanian Deadlifts">
+            <h2 onclick="toggleDescription(6)">Romanian Deadlifts</h2>
+            <p>Description: Romanian deadlifts target the hamstrings and lower back, ideal for improving posterior chain strength.</p>
+            <button onclick="toggleVideo(6)">Watch Video</button>
+            <iframe id="video-6" src="https://www.youtube.com/embed/2SHsk9AzdjA" allowfullscreen></iframe>
+        </li>
+
+    </ul>
+
+    <script>
+        function toggleDescription(index) {
+            const descriptions = document.querySelectorAll(".exercise p");
+            descriptions[index].style.display = descriptions[index].style.display === "block" ? "none" : "block";
+        }
+
+        function toggleVideo(index) {
+            const videos = document.querySelectorAll("iframe");
+            videos[index].style.display = videos[index].style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>

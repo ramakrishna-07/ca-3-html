@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Delivery Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thank-you {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .order-id {
+            font-size: 24px;
+            color: #888;
+            margin-bottom: 50px;
+        }
+
+        .road {
+            width: 100%;
+            height: 150px;
+            background-color: #555;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .truck {
+            position: absolute;
+            top: 20px;
+            left: -200px;
+            width: 200px;
+            height: 100px;
+            background-color: #ffcc00;
+            border: 5px solid #333;
+            border-radius: 10px;
+            animation: moveTruck 5s linear infinite;
+        }
+
+        .truck:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+
+        .truck:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+        }
+
+        @keyframes moveTruck {
+            0% {
+                left: -200px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Full screen handling for animation */
+        .animation-area {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="thank-you">
+            Thank you for your order!
+        </div>
+        <div class="order-id" id="orderId">
+            Order ID: #
+        </div>
+    </div>
+
+    <div class="animation-area">
+        <div class="road">
+            <div class="truck"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to generate random order ID
+        function generateOrderId() {
+            const orderId = Math.floor(Math.random() * 1000000) + 1;
+            document.getElementById("orderId").innerHTML = "Order ID: #" + orderId;
+        }
+        
+        // Automatically generate order ID when page loads
+        window.onload = generateOrderId;
+    </script>
+
+</body>
+</html>

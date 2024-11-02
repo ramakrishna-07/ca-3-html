@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Beginner Workout Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .exercise-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        .exercise {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .exercise:hover {
+            transform: translateY(-5px);
+        }
+
+        .exercise img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .exercise h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .exercise p {
+            display: none;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin-top: 15px;
+            display: none;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Top Beginner Workout Plan</h1>
+
+    <ul class="exercise-list">
+
+        <!-- Exercise 1 -->
+        <li class="exercise">
+            <img src="images/Top Jumping jacks.jpg" alt="Jumping Jacks">
+            <h2 onclick="toggleDescription(0)">Jumping Jacks</h2>
+            <p>Description: Jumping jacks are a great cardio exercise that increases heart rate, burns calories, and improves stamina.</p>
+            <button onclick="toggleVideo(0)">Watch Video</button>
+            <iframe id="video-0" src="https://www.youtube.com/embed/c4DAnQ6DtF8" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 2 -->
+        <li class="exercise">
+            <img src="images/Top Wall sit.jpg" alt="Wall Sit">
+            <h2 onclick="toggleDescription(1)">Wall Sit</h2>
+            <p>Description: Wall sits strengthen the quadriceps and engage the core while enhancing endurance.</p>
+            <button onclick="toggleVideo(1)">Watch Video</button>
+            <iframe id="video-1" src="https://www.youtube.com/embed/-cdph8hv0O0" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 3 -->
+        <li class="exercise">
+            <img src="images/Top Arm circles.jpg" alt="Arm Circles">
+            <h2 onclick="toggleDescription(2)">Arm Circles</h2>
+            <p>Description: Arm circles are a simple and effective way to warm up the shoulders and upper arms.</p>
+            <button onclick="toggleVideo(2)">Watch Video</button>
+            <iframe id="video-2" src="https://www.youtube.com/embed/CzDcoXxZ-pY" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 4 -->
+        <li class="exercise">
+            <img src="images/Top modified pushups.jpg" alt="Modified Push-Ups">
+            <h2 onclick="toggleDescription(3)">Modified Push-Ups</h2>
+            <p>Description: A beginner-friendly version of push-ups that build chest, shoulders, and triceps strength.</p>
+            <button onclick="toggleVideo(3)">Watch Video</button>
+            <iframe id="video-3" src="https://www.youtube.com/embed/IoUE8ygJXF0" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 5 -->
+        <li class="exercise">
+            <img src="images/Top High knees.jpg" alt="High Knees">
+            <h2 onclick="toggleDescription(4)">High Knees</h2>
+            <p>Description: High knees are a cardio exercise that engages the core and improves balance and coordination.</p>
+            <button onclick="toggleVideo(4)">Watch Video</button>
+            <iframe id="video-4" src="https://www.youtube.com/embed/OAJ_J3EZkdY" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 6 -->
+        <li class="exercise">
+            <img src="images/Top Mountain climbers.jpg" alt="Mountain Climbers">
+            <h2 onclick="toggleDescription(5)">Mountain Climbers</h2>
+            <p>Description: Mountain climbers work the entire body, focusing on the core, legs, and upper body.</p>
+            <button onclick="toggleVideo(5)">Watch Video</button>
+            <iframe id="video-5" src="https://www.youtube.com/embed/nmwgirgXLYM" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 7 -->
+        <li class="exercise">
+            <img src="images/Top Leg Raises.jpg" alt="Leg Raises">
+            <h2 onclick="toggleDescription(6)">Leg Raises</h2>
+            <p>Description: Leg raises target the lower abs and help strengthen the core.</p>
+            <button onclick="toggleVideo(6)">Watch Video</button>
+            <iframe id="video-6" src="https://www.youtube.com/embed/l4kQd9eWclE" allowfullscreen></iframe>
+        </li>
+
+    </ul>
+
+    <script>
+        function toggleDescription(index) {
+            const descriptions = document.querySelectorAll(".exercise p");
+            descriptions[index].style.display = descriptions[index].style.display === "block" ? "none" : "block";
+        }
+
+        function toggleVideo(index) {
+            const videos = document.querySelectorAll("iframe");
+            videos[index].style.display = videos[index].style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>

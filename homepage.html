@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Training Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .training-category {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .category {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .category img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .category h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">FITNESS TRIBE</div>
+        <br><marquee>WE  ARE  HERE  TO  CREATE  YOUR  SWEATSPOT!</marquee>
+        <nav class="nav">
+            
+            <a href="homepage.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="diet.html">Diet</a> <!-- Added Diet link -->
+            <a href="contact.html">Contact</a>
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="training-category">
+            <div class="category beginner">
+                <img src="images/beginners.jpg" alt="Beginner Training">
+                <h2>Beginners</h2>
+                <p>Start your fitness journey with our beginner workouts designed to ease you into training.</p>
+                <button onclick="showDetails('Beginner')"><a href="begin.html">Learn More</a></button>
+            </div>
+            <div class="category intermediate">
+                <img src="images/intermediate body.jpg" alt="Intermediate Training">
+                <h2>Intermediate</h2>
+                <p>Take your fitness to the next level with intermediate-level training sessions.</p>
+                <button onclick="showDetails('Intermediate')"><a href="inter.html">Learn More</a></button>
+            </div>
+            <div class="category pro">
+                <img src="images/top body builders.jpg" alt="Pro Training">
+                <h2>Top Bodybuilders</h2>
+                <p>Advanced routines and tips for professional bodybuilders looking to stay on top of their game.</p>
+                <button onclick="showDetails('Pro')"><a href="topbeginners.html">Learn More</a></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FITNESS TRIBE &copy; 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showDetails(category) {
+            alert("You selected the " + category + " training category!");
+        }
+    </script>
+
+</body>
+</html>

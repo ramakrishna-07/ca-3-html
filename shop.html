@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Products Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 30%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .product button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .product button:hover {
+            background-color: #555;
+        }
+
+        .cart-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #e7f3fe; /* Light blue background */
+            border: 1px solid #bee0f1; /* Light blue border */
+            border-radius: 8px; /* Rounded corners */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0056b3; /* Darker blue for the heading */
+        }
+
+        .cart-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cart-section table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        .cart-section th, .cart-section td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .cart-section th {
+            background-color: #f2f2f2;
+        }
+
+        .remove-button {
+            color: red;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            padding: 0;
+            margin-left: 10px;
+        }
+
+        .cart-section button {
+            background-color: #0056b3; /* Dark blue for the button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px; /* Rounded button */
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-section button:hover {
+            background-color: #004494; /* Darker blue on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Fitnesstribe</div>
+        <nav class="nav">
+            <a href="homepage.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="diet.html">Diet</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gym Products</h1>
+        <section class="product-list">
+            <div class="product" data-price="50">
+                <img src="images/Dumbbells.jpg" alt="Dumbbells">
+                <h2>Dumbbells</h2>
+                <p>High-quality adjustable dumbbells for strength training.</p>
+                <button onclick="addToCart('Dumbbells', 50)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="30">
+                <img src="images/Yoga mat.jpg" alt="Yoga Mat">
+                <h2>Yoga Mat</h2>
+                <p>Durable and non-slip yoga mat for your workout sessions.</p>
+                <button onclick="addToCart('Yoga Mat', 30)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="20">
+                <img src="images/Resistance bands.jpg" alt="Resistance Bands">
+                <h2>Resistance Bands</h2>
+                <p>Versatile resistance bands for various exercises.</p>
+                <button onclick="addToCart('Resistance Bands', 20)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="25">
+                <img src="images/Exercise ball.jpg" alt="Exercise Ball">
+                <h2>Exercise Ball</h2>
+                <p>Improve your core strength with this exercise ball.</p>
+                <button onclick="addToCart('Exercise Ball', 25)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="15">
+                <img src="images/Foam roll.jpg" alt="Foam Roller">
+                <h2>Foam Roller</h2>
+                <p>Perfect for muscle recovery and flexibility.</p>
+                <button onclick="addToCart('Foam Roller', 15)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="10">
+                <img src="images/Jump rope.jpg" alt="Jump Rope">
+                <h2>Jump Rope</h2>
+                <p>Great for cardio and improving your agility.</p>
+                <button onclick="addToCart('Jump Rope', 10)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="12">
+                <img src="images/Protein shaker.jpg" alt="Protein Shaker">
+                <h2>Protein Shaker</h2>
+                <p>Convenient shaker for your protein drinks on the go.</p>
+                <button onclick="addToCart('Protein Shaker', 12)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="40">
+                <img src="images/Kettle bell.jpg" alt="Kettlebell">
+                <h2>Kettlebell</h2>
+                <p>High-quality kettlebell for full-body workouts.</p>
+                <button onclick="addToCart('Kettlebell', 40)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="8">
+                <img src="images/Weight lifting gloves.jpg" alt="Weight Lifting Gloves">
+                <h2>Weight Lifting Gloves</h2>
+                <p>Protect your hands while lifting weights.</p>
+                <button onclick="addToCart('Weight Lifting Gloves', 8)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="60">
+                <img src="images/Tread mill" alt="Treadmill">
+                <h2>Treadmill</h2>
+                <p>High-quality treadmill for home workouts.</p>
+                <button onclick="addToCart('Treadmill', 60)">Add to Cart</button>
+            </div>
+            <div class="product" data-price="18">
+                <img src="images/Water bottle.jpg" alt="Water Bottle">
+                <h2>Water Bottle</h2>
+                <p>Stay hydrated with this reusable water bottle.</p>
+                <button onclick="addToCart('Water Bottle', 18)">Add to Cart</button>
+            </div>
+        </section>
+
+        <div class="cart-section">
+            <h2>Shopping Cart</h2>
+            <p id="cart-count">Items in Cart: 0</p>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price ($)</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-body">
+                    <!-- Cart items will be dynamically added here -->
+                </tbody>
+            </table>
+            <p id="total-price">Total Price: $0</p>
+            <button onclick="buyNow()"><a href="delivery.html">Buy Now</a></button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Elite Gym Shop &copy; 2024. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cartItems = [];
+        let totalPrice = 0;
+
+        function addToCart(productName, productPrice) {
+            cartItems.push({ name: productName, price: productPrice });
+            totalPrice += productPrice;
+            document.getElementById('cart-count').innerText = "Items in Cart: " + cartItems.length;
+            updateCartTable();
+            alert(productName + " has been added to your cart!");
+        }
+
+        function updateCartTable() {
+            const cartBody = document.getElementById('cart-body');
+            cartBody.innerHTML = ''; // Clear previous cart items
+
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price}</td>
+                    <td><button class="remove-button" onclick="removeFromCart(${index})">X</button></td>
+                `;
+                cartBody.appendChild(row);
+            });
+
+            document.getElementById('total-price').innerText = "Total Price: $" + totalPrice.toFixed(2);
+        }
+
+        function removeFromCart(index) {
+            const removedItem = cartItems[index];
+            totalPrice -= removedItem.price; // Decrease total price by the price of the removed item
+            cartItems.splice(index, 1); // Remove item from cart
+            document.getElementById('cart-count').innerText = "Items in Cart: " + cartItems.length;
+            updateCartTable(); // Update the cart display
+            alert(removedItem.name + " has been removed from your cart.");
+        }
+
+        function buyNow() {
+            if (cartItems.length === 0) {
+                alert("Your cart is empty. Please add items to your cart before buying.");
+            } else {
+                alert("Thank you for your purchase! You bought " + cartItems.length + " items for a total of $" + totalPrice.toFixed(2));
+                // Reset cart
+                cartItems = [];
+                totalPrice = 0;
+                document.getElementById('cart-count').innerText = "Items in Cart: 0";
+                updateCartTable();
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Workout Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .exercise-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style-type: none;
+        }
+
+        .exercise {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .exercise:hover {
+            transform: translateY(-5px);
+        }
+
+        .exercise img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .exercise h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .exercise p {
+            display: none;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin-top: 15px;
+            display: none;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Beginner Workout Plan</h1>
+
+    <ul class="exercise-list">
+
+        <!-- Exercise 1 -->
+        <li class="exercise">
+            <img src="images/Bodyweight Squats..jpg" alt="Bodyweight Squats">
+            <h2 onclick="toggleDescription(0)">Bodyweight Squats</h2>
+            <p>Description: Bodyweight squats are great for building strength in the lower body, especially your quadriceps, hamstrings, and glutes.</p>
+            <button onclick="toggleVideo(0)">Watch Video</button>
+            <iframe id="video-0" src="https://www.youtube.com/embed/aclHkVaku9U" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 2 -->
+        <li class="exercise">
+            <img src="images/Pushups.jpg" alt="Push-Ups">
+            <h2 onclick="toggleDescription(1)">Push-Ups</h2>
+            <p>Description: Push-ups strengthen your chest, shoulders, triceps, and core.</p>
+            <button onclick="toggleVideo(1)">Watch Video</button>
+            <iframe id="video-1" src="https://www.youtube.com/embed/IODxDxX7oi4" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 3 -->
+        <li class="exercise">
+            <img src="images/plank image.jpg" alt="Plank">
+            <h2 onclick="toggleDescription(2)">Plank</h2>
+            <p>Description: The plank is an excellent core-strengthening exercise.</p>
+            <button onclick="toggleVideo(2)">Watch Video</button>
+            <iframe id="video-2" src="https://www.youtube.com/embed/pSHjTRCQxIw" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 4 -->
+        <li class="exercise">
+            <img src="images/Beginers Lunges image.jpg" alt="Lunges">
+            <h2 onclick="toggleDescription(3)">Lunges</h2>
+            <p>Description: Lunges target the quadriceps, glutes, and hamstrings, improving balance and coordination.</p>
+            <button onclick="toggleVideo(3)">Watch Video</button>
+            <iframe id="video-3" src="https://www.youtube.com/embed/QOVaHwm-Q6U" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 5 -->
+        <li class="exercise">
+            <img src="images/Beginers Dumbbell.jpg" alt="Dumbbell Rows">
+            <h2 onclick="toggleDescription(4)">Dumbbell Rows</h2>
+            <p>Description: Dumbbell rows build strength in the upper back, shoulders, and biceps.</p>
+            <button onclick="toggleVideo(4)">Watch Video</button>
+            <iframe id="video-4" src="https://www.youtube.com/embed/pYcpY20QaE8" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 6 -->
+        <li class="exercise">
+            <img src="images/beginners Glute bridge.jpg" alt="Glute Bridge">
+            <h2 onclick="toggleDescription(5)">Glute Bridge</h2>
+            <p>Description: The glute bridge works the glutes, hamstrings, and lower back.</p>
+            <button onclick="toggleVideo(5)">Watch Video</button>
+            <iframe id="video-5" src="https://www.youtube.com/embed/8bbE64NuDTU" allowfullscreen></iframe>
+        </li>
+
+        <!-- Exercise 7 -->
+        <li class="exercise">
+            <img src="images/Beginners Standing Overhead Dumbbell.jpg" alt="Overhead Dumbbell Press">
+            <h2 onclick="toggleDescription(6)">Standing Overhead Dumbbell Press</h2>
+            <p>Description: This exercise targets your shoulders, triceps, and upper chest.</p>
+            <button onclick="toggleVideo(6)">Watch Video</button>
+            <iframe id="video-6" src="https://www.youtube.com/embed/2yjwXTZQDDI" allowfullscreen></iframe> <!-- Corrected video link -->
+        </li>
+
+    </ul>
+
+    <script>
+        function toggleDescription(index) {
+            const descriptions = document.querySelectorAll(".exercise p");
+            descriptions[index].style.display = descriptions[index].style.display === "block" ? "none" : "block";
+        }
+
+        function toggleVideo(index) {
+            const videos = document.querySelectorAll("iframe");
+            videos[index].style.display = videos[index].style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
